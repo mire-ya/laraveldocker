@@ -102,12 +102,12 @@ class VotoController extends Controller
      */
     public function edit($id)
     {
-        $elecciones = Eleccion::all();
+        /*$elecciones = Eleccion::all();
         $casillas = Casilla::all();
         $voto = Voto::find($id);
 
         return view("voto/edit", 
-        compact("voto","elecciones","casillas"));
+        compact("voto","elecciones","casillas"));*/
     }
 
     /**
@@ -119,7 +119,7 @@ class VotoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        /*$request->validate([
             'casilla_id'=>'required|integer',
             'eleccion_id'=>'required|integer',
             'evidencia' => 'required|max:200'
@@ -134,7 +134,7 @@ class VotoController extends Controller
         
         Voto::find($id)->update($data);
         return redirect('voto')->with('success',
-            ' Cambio Realizado ...');
+            ' Cambio Realizado ...');*/
 
     }
 
@@ -146,7 +146,7 @@ class VotoController extends Controller
      */
     public function destroy($id)
     {
-        Voto::find($id)->delete();
-        return redirect('voto');
+        /*Voto::find($id)->delete();
+        return redirect('voto');*/
     }
 }
