@@ -24,11 +24,15 @@ margin-top: 40px;
 			<div class="form-group">
 				@csrf
 				<label for="descripcion">Descripción:</label>
-				<input type="text" class="form-control" name="descripcion"/>
+				<input type="text" class="form-control" name="descripcion" id="descripcion"/>
 			</div>
 
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary" onClick="return validate()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+@section('page-script')
+<script type="text/javascript" src="/js/rol.js"></script>
+@stop
