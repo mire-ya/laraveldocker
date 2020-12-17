@@ -58,7 +58,7 @@
                             <td>{{$candidato->nombrecompleto}}</td>
                             <td><img src="uploads/{{$candidato->foto}}" alt="foto"> </td>
                             <td><input type="number" id="candidato_{{$candidato->id}}" 
-                                name="candidato_{{$candidato->id}}" /> </td>
+                                name="candidato_{{$candidato->id}}"  class="voto"/> </td>
                         </tr>
                         @endforeach    
                     </tbody>
@@ -68,11 +68,15 @@
 			<div class="form-group">
                 @csrf
                 <label for="evidencia">Evidencia:</label>
-                <input type="file" name="evidencia"  accept="application/pdf" >
+                <input type="file" name="evidencia" accept="application/pdf" id="evidencia">
             </div>
 
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary" onClick="return validate()">Guardar</button>
         </form>
 	</div>
 </div>
 @endsection
+
+@section('page-script')
+<script type="text/javascript" src="/js/voto.js"></script>
+@stop
