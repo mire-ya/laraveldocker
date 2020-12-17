@@ -26,18 +26,22 @@
 				<label for="nombrecompleto">Nombre:</label>
 				<input type="text" class="form-control" 
 				maxlength="100"
-				name="nombrecompleto"/>
+				name="nombrecompleto" id="nombrecompleto"/>
 			</div>
 
 			<div class="form-group">
 				@csrf
 				<label for="sexo">Sexo:</label>
 				<input type="text" class="form-control" 
-				name="sexo" maxlength="1" />
+				name="sexo" maxlength="1" id="sexo"/>
 			</div>
 
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-primary" onClick="return validate()">Guardar</button>
 		</form>
 	</div>
 </div>
 @endsection
+
+@section('page-script')
+	<script type="text/javascript" src="/js/funcionario.js"></script>
+@stop
