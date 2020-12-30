@@ -39,30 +39,34 @@ class CandidatoController extends GenericController
 			'nombrecompleto' => 'unique:candidato|required|max:200',
 			'sexo' =>'required'
 		]);
-	if ($validacion->fails())
-	return $this->sendError("Error de validacion", $validacion->errors());
-	$fotocandidato=""; $perfilcandidato="";
-	if ($request->hasFile('foto')){
-	$foto = $request->file('foto');
-	$fotocandidato= $foto->getClientOriginalName();
-	}
-	if ($request->hasFile('perfil')){
-	$perfil = $request->file('perfil');
-	$perfilcandidato = $perfil->getClientOriginalName();
-	}
-	$campos = array(
-	'nombrecompleto' => $request->nombrecompleto,
-	'sexo' => $request->sexo,
-	'foto' => $fotocandidato,
-	'perfil' => $perfilcandidato,
-	);
-	if ($request->hasFile('foto')) $foto->move(public_path('uploads'), $fotocandidato);
-	if ($request->hasFile('perfil')) $perfil->move(public_path('uploads'), $perfilcandidato);
-	$candidato = Candidato::create($campos);
-	$resp = $this->sendResponse($candidato,
-	"Guardado...");
-	return($resp);
-	} //--- End store
+		if ($validacion->fails())
+			return $this->sendError("Error de validacion", $validacion->errors());
+			$fotocandidato=""; $perfilcandidato="";
+
+		if ($request->hasFile('foto')){
+			$foto = $request->file('foto');
+			$fotocandidato= $foto->getClientOriginalName();
+		}
+
+		if ($request->hasFile('perfil')){
+			$perfil = $request->file('perfil');
+			$perfilcandidato = $perfil->getClientOriginalName();
+		}
+
+		$campos = array(
+			'nombrecompleto' => $request->nombrecompleto,
+			'sexo' => $request->sexo,
+			'foto' => $fotocandidato,
+			'perfil' => $perfilcandidato,
+		);
+		if ($request->hasFile('foto')) $foto->move(public_path('uploads'), $fotocandidato);
+		
+		if ($request->hasFile('perfil')) $perfil->move(public_path('uploads'), $perfilcandidato);
+			$candidato = Candidato::create($campos);
+			$resp = $this->sendResponse($candidato,
+			"Guardado...");
+			return($resp);
+		} //--- End store
 	/**
 	* Display the specified resource.
 	*
