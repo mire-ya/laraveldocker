@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Casilla;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class CasillaController extends Controller
 {
@@ -23,6 +22,8 @@ class CasillaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function create()
     {
         return view('casilla/create');
@@ -91,6 +92,7 @@ class CasillaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $casilla = Casilla::find($id);

@@ -17,10 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $rol_id
  * @property int|null $eleccion_id
  * 
- * @property Casilla $casilla
- * @property Eleccion $eleccion
- * @property Funcionario $funcionario
- * @property Rol $rol
+ * @property Casilla|null $casilla
+ * @property Eleccion|null $eleccion
+ * @property Funcionario|null $funcionario
+ * @property Rol|null $rol
  *
  * @package App\Models
  */

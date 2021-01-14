@@ -17,8 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $casilla_id
  * @property string|null $evidencia
  * 
- * @property Casilla $casilla
- * @property Eleccion $eleccion
+ * @property Casilla|null $casilla
+ * @property Eleccion|null $eleccion
  * @property Collection|Candidato[] $candidatos
  *
  * @package App\Models

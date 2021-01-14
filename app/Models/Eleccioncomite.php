@@ -16,9 +16,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $funcionario_id
  * @property int|null $rol_id
  * 
- * @property Eleccion $eleccion
- * @property Funcionario $funcionario
- * @property Rol $rol
+ * @property Eleccion|null $eleccion
+ * @property Funcionario|null $funcionario
+ * @property Rol|null $rol
  *
  * @package App\Models
  */

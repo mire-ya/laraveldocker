@@ -17,9 +17,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $casilla_id
  * @property string $imei
  * 
- * @property Casilla $casilla
- * @property Eleccion $eleccion
- * @property Funcionario $funcionario
+ * @property Casilla|null $casilla
+ * @property Eleccion|null $eleccion
+ * @property Funcionario|null $funcionario
  *
  * @package App\Models
  */
