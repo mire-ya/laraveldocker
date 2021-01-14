@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Casilla;
+use App\Models\Eleccion;
 
-class CasillaController extends Controller
+class EleccionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CasillaController extends Controller
      */
     public function index()
     {
-       $casillas = Casilla::all();
-       return view('casilla/list', compact('casillas'));
+          $elecciones = Eleccion::all();
+       return view('eleccion/list', compact('elecciones'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CasillaController extends Controller
      */
     public function create()
     {
-        return view('casilla/create');
+        return view('eleccion/create');
     }
 
     /**
@@ -37,11 +37,17 @@ class CasillaController extends Controller
     public function store(Request $request)
     {
         $validacion = $request->validate([
-        'ubicacion' => 'required|max:100',
+        'periodo' => 'required|max:100',
+        'fecha' => 'required',
+        'fechaapertura' => 'required',
+        'horaapertura' => 'required',
+        'fechacierre' => 'required',
+        'horacierre' => 'required',
+        'observaciones' => 'required|max:100',
         ]);
-        $casilla = Casilla::create($validacion);
-        return redirect('casilla')->with('success',
-        $casilla->ubicacion . ' Guardado correctamente ...');
+        $eleccion = Eleccion::create($validacion);
+        return redirect('eleccion')->with('success',
+        $eleccion->periodo . ' Guardado Correctamente ...');
     }
 
     /**
@@ -63,9 +69,12 @@ class CasillaController extends Controller
      */
     public function edit($id)
     {
-        $casilla = Casilla::find($id);
-        return view('casilla/edit',
-        compact('casilla'));
+        $eleccion = Eleccion::find($id);
+        return view("eleccion/edit", 
+        compact('eleccion'));
+
+
+        
     }
 
     /**
@@ -78,11 +87,18 @@ class CasillaController extends Controller
     public function update(Request $request, $id)
     {
         $validacion = $request->validate([
-         'ubicacion' => 'required|max:100',
+        'periodo' => 'required|max:100',
+        'fecha' => 'required',
+        'fechaapertura' => 'required',
+        'horaapertura' => 'required',
+        'fechacierre' => 'required',
+        'horacierre' => 'required',
+        'observaciones' => 'required|max:100',
         ]);
-        Casilla::whereId($id)->update($validacion);
-        return redirect('casilla')
-        ->with('success', 'Actualizado correctamente...');
+
+        Eleccion::whereId($id)->update($validacion);
+        return redirect('eleccion')
+        ->with('success', ' Actualizado correctamente ...');
     }
 
     /**
@@ -93,8 +109,7 @@ class CasillaController extends Controller
      */
     public function destroy($id)
     {
-        $casilla = Casilla::find($id);
-        $casilla->delete();
-        return redirect('casilla');
+        Eleccion::find($id)->delete();
+        return redirect('eleccion');
     }
 }

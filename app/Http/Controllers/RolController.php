@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Casilla;
+use App\Models\Rol;
 
-class CasillaController extends Controller
+class RolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class CasillaController extends Controller
      */
     public function index()
     {
-       $casillas = Casilla::all();
-       return view('casilla/list', compact('casillas'));
+        $roles = Rol::all();
+        return view('rol/list', compact('roles'));
+    
     }
 
     /**
@@ -25,7 +26,7 @@ class CasillaController extends Controller
      */
     public function create()
     {
-        return view('casilla/create');
+        return view('rol/create');
     }
 
     /**
@@ -37,11 +38,11 @@ class CasillaController extends Controller
     public function store(Request $request)
     {
         $validacion = $request->validate([
-        'ubicacion' => 'required|max:100',
+        'descripcion' => 'required|max:100',
         ]);
-        $casilla = Casilla::create($validacion);
-        return redirect('casilla')->with('success',
-        $casilla->ubicacion . ' Guardado correctamente ...');
+        $rol = Rol::create($validacion);
+        return redirect('rol')->with('success',
+        $rol->descripcion . ' Guardado Satisfactoriamente ...');
     }
 
     /**
@@ -52,7 +53,7 @@ class CasillaController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -63,9 +64,9 @@ class CasillaController extends Controller
      */
     public function edit($id)
     {
-        $casilla = Casilla::find($id);
-        return view('casilla/edit',
-        compact('casilla'));
+        $rol = Rol::find($id);
+        return view('rol/edit',
+        compact('rol'));
     }
 
     /**
@@ -78,11 +79,11 @@ class CasillaController extends Controller
     public function update(Request $request, $id)
     {
         $validacion = $request->validate([
-         'ubicacion' => 'required|max:100',
+         'descripcion' => 'required|max:100',
         ]);
-        Casilla::whereId($id)->update($validacion);
-        return redirect('casilla')
-        ->with('success', 'Actualizado correctamente...');
+        Rol::whereId($id)->update($validacion);
+        return redirect('rol')
+        ->with('success', 'Actualizado Correctamente...');
     }
 
     /**
@@ -93,8 +94,8 @@ class CasillaController extends Controller
      */
     public function destroy($id)
     {
-        $casilla = Casilla::find($id);
-        $casilla->delete();
-        return redirect('casilla');
+        $rol = Rol::find($id);
+        $rol->delete();
+        return redirect('rol');
     }
 }

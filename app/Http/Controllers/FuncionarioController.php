@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Casilla;
+use App\Models\Funcionario;
 
-class CasillaController extends Controller
+class FuncionarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CasillaController extends Controller
      */
     public function index()
     {
-       $casillas = Casilla::all();
-       return view('casilla/list', compact('casillas'));
+        $funcionarios = Funcionario::all();
+        return view("/funcionario/list", compact('funcionarios'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CasillaController extends Controller
      */
     public function create()
     {
-        return view('casilla/create');
+        return view('funcionario/create');
     }
 
     /**
@@ -36,12 +36,18 @@ class CasillaController extends Controller
      */
     public function store(Request $request)
     {
-        $validacion = $request->validate([
-        'ubicacion' => 'required|max:100',
+        $request->validate([
+         'nombrecompleto' => 'required|max:100',
+         'sexo' => 'required|max:1'
         ]);
-        $casilla = Casilla::create($validacion);
-        return redirect('casilla')->with('success',
-        $casilla->ubicacion . ' Guardado correctamente ...');
+
+        $data = ["id"=>$request->id,
+            "nombrecompleto"=>$request->nombrecompleto,
+            "sexo"=>$request->sexo];
+
+        $funcionario = Funcionario::create($data);
+        return redirect('funcionario')
+        ->with('success', $funcionario->nombrecompleto . 'Agregado Correctamente...');
     }
 
     /**
@@ -63,9 +69,8 @@ class CasillaController extends Controller
      */
     public function edit($id)
     {
-        $casilla = Casilla::find($id);
-        return view('casilla/edit',
-        compact('casilla'));
+        $funcionario = Funcionario::find($id);
+        return view("funcionario/edit", compact('funcionario'));
     }
 
     /**
@@ -77,12 +82,18 @@ class CasillaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validacion = $request->validate([
-         'ubicacion' => 'required|max:100',
+        $request->validate([
+         'nombrecompleto' => 'required|max:100',
+         'sexo' => 'required|max:1'
         ]);
-        Casilla::whereId($id)->update($validacion);
-        return redirect('casilla')
-        ->with('success', 'Actualizado correctamente...');
+
+        $data = ["id"=>$request->id,
+            "nombrecompleto"=>$request->nombrecompleto,
+            "sexo"=>$request->sexo];
+
+        Funcionario::whereId($id)->update($data);
+        return redirect('funcionario')
+        ->with('success', 'Actualizado Correctamente...');
     }
 
     /**
@@ -93,8 +104,7 @@ class CasillaController extends Controller
      */
     public function destroy($id)
     {
-        $casilla = Casilla::find($id);
-        $casilla->delete();
-        return redirect('casilla');
+        Funcionario::whereId($id)->delete();
+        return redirect('funcionario');
     }
 }
