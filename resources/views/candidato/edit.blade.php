@@ -6,10 +6,10 @@
 }
 </style>
 
-<div class="card">
+<div class="card uper">
 	<div class="card-header">
 		Editar candidato
-	</div>	
+	</div>
 <div class="card-body">
 	@if ($errors->any())
 		<div class="alert alert-danger">
@@ -20,12 +20,12 @@
 			</ul>
 		</div><br />
 	@endif
-	<form method="POST" action="{{ route('candidato.update', $candidato->id) }}" enctype="multipart/form-data">
+	<form method="POST"action="{{ route('candidato.update', $candidato->id) }}" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		@method('PUT')
 
 		<div class="form-group">
-			@csrf
+		@csrf
 			<label for="id">ID:</label>
 			<input type="text"
 			class="form-control"
@@ -36,7 +36,7 @@
 
 		<div class="form-group">
 			@csrf
-			<label for="nombrecompleto">Nombre Completo:</label>
+			<label for="nombrecompleto">NombreCompleto:</label>
 			<input type="text"
 			value="{{$candidato->nombrecompleto}}"
 			class="form-control"
@@ -53,12 +53,12 @@
 		</div>
 
 		<div class="form-group">
-			<label for="foto">Elija la foto del candidato</label>
+			<label for="foto">Elija la foto del candidato:</label>
 			<input type="file" class="form-control" name="foto">
 		</div>
 
 		<div class="form-group">
-			<label for="perfil">Elija el documento sobre el perfil</label>
+			<label for="perfil">Elija el documento sobre el perfil:</label>
 			<input type="file" class="form-control" name="perfil">
 		</div>
 

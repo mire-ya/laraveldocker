@@ -26,7 +26,6 @@ margin-top: 40px;
 				<label for="descripcion">Descripción:</label>
 				<input type="text" class="form-control" name="descripcion" id="descripcion"/>
 			</div>
-
 			<button type="submit" class="btn btn-primary" onClick="return validate()">Guardar</button>
 		</form>
 	</div>
@@ -34,5 +33,5 @@ margin-top: 40px;
 @endsection
 
 @section('page-script')
-<script type="text/javascript" src="/js/rol.js"></script>
+	<script type="text/javascript" src="/js/rol.js"></script>
 @stop

@@ -11,7 +11,7 @@
         {{ session()->get('success') }}
     </div><br />
     @endif
-    <table class="table table-striped table-hover">
+    <table class="table table-striped">
     <thead>
         <tr>
 			<th>ID</th>
@@ -27,11 +27,11 @@
 			<tr>
 				<td>{{$candidato->id}}</td>
 				<td>{{$candidato->nombrecompleto}}</td>
-				<td><img src="uploads/{{$candidato->foto}}" width="150" height ="150" class= "img-thumbnail" alt ="Aqui va la foto"></td>
+				<td><img src="uploads/{{$candidato->foto}}" width="150" height ="150" alt ="Aqui va la foto"></td>
 				<td>{{$candidato->sexo}}</td>
 				<td><a href="uploads/{{$candidato->perfil}}"> 
 					<img src="uploads/icon-pdf.png" alt ="pdf" width="100" height ="100">  </a> 
-				</td>
+			</td>
 				<td><a href="{{ route('candidato.edit', $candidato->id)}}"
 					class="btn btn-primary">Editar</a></td>
 				<td>

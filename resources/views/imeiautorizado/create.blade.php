@@ -64,5 +64,5 @@
 @endsection
 
 @section('page-script')
-	<script type="text/javascript" src="/js/imei.js"></script>
+<script type="text/javascript" src="/js/imei.js"></script>
 @stop

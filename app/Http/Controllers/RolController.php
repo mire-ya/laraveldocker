@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Rol;
-
 class RolController extends Controller
 {
     /**
@@ -42,7 +41,7 @@ class RolController extends Controller
         ]);
         $rol = Rol::create($validacion);
         return redirect('rol')->with('success',
-        $rol->descripcion . ' Guardado Satisfactoriamente ...');
+        $rol->descripcion . ' guardado satisfactoriamente ...');
     }
 
     /**
@@ -83,7 +82,7 @@ class RolController extends Controller
         ]);
         Rol::whereId($id)->update($validacion);
         return redirect('rol')
-        ->with('success', 'Actualizado Correctamente...');
+        ->with('success', 'Actualizado correctamente...');
     }
 
     /**

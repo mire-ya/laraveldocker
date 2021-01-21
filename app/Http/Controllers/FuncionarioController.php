@@ -15,7 +15,7 @@ class FuncionarioController extends Controller
     public function index()
     {
         $funcionarios = Funcionario::all();
-        return view("/funcionario/list", compact('funcionarios'));
+			return view("/funcionario/list", compact('funcionarios'));
     }
 
     /**
@@ -36,7 +36,7 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+       $request->validate([
          'nombrecompleto' => 'required|max:100',
          'sexo' => 'required|max:1'
         ]);
@@ -47,7 +47,7 @@ class FuncionarioController extends Controller
 
         $funcionario = Funcionario::create($data);
         return redirect('funcionario')
-        ->with('success', $funcionario->nombrecompleto . 'Agregado Correctamente...');
+        ->with('success', $funcionario->nombrecompleto . 'Agregado correctamente...');
     }
 
     /**
@@ -69,7 +69,7 @@ class FuncionarioController extends Controller
      */
     public function edit($id)
     {
-        $funcionario = Funcionario::find($id);
+         $funcionario = Funcionario::find($id);
         return view("funcionario/edit", compact('funcionario'));
     }
 
@@ -82,7 +82,7 @@ class FuncionarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+         $request->validate([
          'nombrecompleto' => 'required|max:100',
          'sexo' => 'required|max:1'
         ]);
@@ -93,7 +93,7 @@ class FuncionarioController extends Controller
 
         Funcionario::whereId($id)->update($data);
         return redirect('funcionario')
-        ->with('success', 'Actualizado Correctamente...');
+        ->with('success', 'Actualizado correctamente...');
     }
 
     /**

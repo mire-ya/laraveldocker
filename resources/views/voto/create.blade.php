@@ -6,7 +6,7 @@
 </style>
 <div class="card uper">
 	<div class="card-header">
-		Votos
+		Agregar Votos
 	</div>
 	<div class="card-body">
 		@if ($errors->any())
@@ -18,9 +18,8 @@
 				</ul>
 			</div><br />
 		@endif
-		<form method="post" action="{{ route('voto.store') }} " enctype="multipart/form-data">
+		 <form method="post" action="{{ route('voto.store') }} " enctype="multipart/form-data">
             {{ csrf_field() }}
-            
             <div class="form-group">
                 @csrf
                 <label for="eleccion_id">Elección:</label>
@@ -30,8 +29,7 @@
                     @endforeach
                 </select>
             </div>
-
-        	<div class="form-group">
+            <div class="form-group">
                 @csrf
                 <label for="casilla_id">Casilla:</label>
                 <select name="casilla_id">
@@ -40,8 +38,7 @@
                     @endforeach
                 </select>
             </div>
-
-			<div>
+            <div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -57,20 +54,16 @@
                             <td>{{$candidato->id}}</td>
                             <td>{{$candidato->nombrecompleto}}</td>
                             <td><img src="uploads/{{$candidato->foto}}" alt="foto"> </td>
-                            <td><input type="number" id="candidato_{{$candidato->id}}" 
-                                name="candidato_{{$candidato->id}}"  class="voto"/> </td>
+                            <td><input type="number" id="candidato_{{$candidato->id}}" name="candidato_{{$candidato->id}}" class="voto"/> </td>
                         </tr>
-                        @endforeach    
-                    </tbody>
+                        @endforeach
                 </table>
             </div>
-
-			<div class="form-group">
+            <div class="form-group">
                 @csrf
                 <label for="evidencia">Evidencia:</label>
-                <input type="file" name="evidencia" accept="application/pdf" id="evidencia">
+                <input type="file" name="evidencia"  accept="application/pdf" id="evidencia">
             </div>
-
             <button type="submit" class="btn btn-primary" onClick="return validate()">Guardar</button>
         </form>
 	</div>

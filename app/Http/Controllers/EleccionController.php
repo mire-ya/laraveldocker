@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Eleccion;
-
 class EleccionController extends Controller
 {
     /**
@@ -47,7 +46,7 @@ class EleccionController extends Controller
         ]);
         $eleccion = Eleccion::create($validacion);
         return redirect('eleccion')->with('success',
-        $eleccion->periodo . ' Guardado Correctamente ...');
+        $eleccion->periodo . ' guardado satisfactoriamente ...');
     }
 
     /**

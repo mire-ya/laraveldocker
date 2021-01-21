@@ -1,9 +1,9 @@
 @extends('plantilla')
 @section('content')
 <style>
-	.uper {
-	margin-top: 40px;
-}
+ .uper {
+ margin-top: 40px;
+ }
 </style>
 
 <div class="card uper">

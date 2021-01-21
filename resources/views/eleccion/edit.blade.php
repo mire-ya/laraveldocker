@@ -25,7 +25,6 @@
 		enctype="multipart/form-data">
 		{{ csrf_field() }}
 		@method('PUT')
-
 		<div class="form-group">
 		@csrf
 		<label for="id">ID:</label>
@@ -35,7 +34,6 @@
 			value="{{$eleccion->id}}"
 			name="id"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="periodo">Periodo:</label>
@@ -44,7 +42,6 @@
 			class="form-control"
 			name="periodo"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="fecha">Fecha:</label>
@@ -53,7 +50,6 @@
 			class="form-control"
 			name="fecha"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="fechaapertura">Fecha de Apertura:</label>
@@ -62,7 +58,6 @@
 			class="form-control"
 			name="fechaapertura"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="horaapertura">Hora de Apertura:</label>
@@ -71,7 +66,6 @@
 			class="form-control"
 			name="horaapertura"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="fechacierre">Fecha de Cierre:</label>
@@ -80,7 +74,6 @@
 			class="form-control"
 			name="fechacierre"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="horacierre">Hora de Cierre:</label>
@@ -89,7 +82,6 @@
 			class="form-control"
 			name="horacierre"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="observaciones">Observaciones:</label>
@@ -98,7 +90,6 @@
 			class="form-control"
 			name="observaciones"/>
 		</div>
-		
 		<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>
 	</div>

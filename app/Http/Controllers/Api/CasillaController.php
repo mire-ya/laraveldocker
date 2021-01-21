@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Casilla;
 
-class CasillaController extends Controller
+class CasillaController extends GenericController
 {
     /**
      * Display a listing of the resource.

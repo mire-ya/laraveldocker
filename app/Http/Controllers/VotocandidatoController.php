@@ -67,7 +67,7 @@ class VotocandidatoController extends Controller
         
         Votocandidato::create($data);
         return redirect('votocandidato')->with('success',
-            ' Guardado Satisfactoriamente ...');
+            ' guardado satisfactoriamente ...');
 
     }
 
@@ -123,7 +123,7 @@ class VotocandidatoController extends Controller
         
         Votocandidato::find($id)->update($data);
         return redirect('votocandidato')->with('success',
-            ' Cambio Realizado ...');
+            ' Cambio realizado ...');
 
     }
     

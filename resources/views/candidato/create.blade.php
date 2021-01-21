@@ -21,6 +21,7 @@ margin-top: 40px;
 		@endif
 		<form method="post" action="{{ route('candidato.store') }} " enctype="multipart/form-data">
 			{{ csrf_field() }}
+
 			<div class="form-group">
 				@csrf
 				<label for="nombrecompleto">Nombre:</label>
@@ -34,7 +35,7 @@ margin-top: 40px;
 			</div>
 
 			<div class="form-group">
-				@csrf
+			@csrf
 				<label for="sexo">Sexo</label>
 					<select name="sexo">
 						<option value="H">Hombre</option>

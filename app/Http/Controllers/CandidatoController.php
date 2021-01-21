@@ -15,7 +15,7 @@ class CandidatoController extends Controller
     public function index()
     {
         $candidatos = Candidato::all();
-		return view('candidato/list', compact('candidatos'));
+        return view('candidato/list', compact('candidatos'));
     }
 
     /**
@@ -57,15 +57,15 @@ class CandidatoController extends Controller
         }
 
         $data=[
-        	"nombrecompleto" => $request->nombrecompleto,
-        	"sexo" => $request->sexo,
-        	"foto" => $foto,
-        	"perfil" => $perfil
-		];
+            "nombrecompleto" => $request->nombrecompleto,
+            "sexo" => $request->sexo,
+            "foto" => $foto,
+            "perfil" => $perfil
+        ];
 
         $candidato = Candidato::create($data);
         return redirect('candidato')->with('success',
-        $candidato->nombrecompleto . ' Guardado Correctamente ...');
+        $candidato->nombrecompleto . ' guardado satisfactoriamente ...');
     }
 
     /**
@@ -121,11 +121,11 @@ class CandidatoController extends Controller
         }
 
         $data=[
-        	"nombrecompleto" => $request->nombrecompleto,
-        	"sexo" => $request->sexo,
-        	"foto" => $foto,
-        	"perfil" => $perfil
-		];
+            "nombrecompleto" => $request->nombrecompleto,
+            "sexo" => $request->sexo,
+            "foto" => $foto,
+            "perfil" => $perfil
+        ];
 
         Candidato::find($id)->update($data);
         return redirect('candidato')->with('success',

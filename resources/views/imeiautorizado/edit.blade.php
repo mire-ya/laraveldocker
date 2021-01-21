@@ -30,8 +30,7 @@
                         @php
                             $selected = ($imeiautorizado->funcionario_id==$funcionario->id)?" selected ":"";
                         @endphp
-                        <option value="{{ $funcionario->id }}" {{$selected}}>{{ $funcionario->nombrecompleto }}
-                        </option>
+                        <option value="{{ $funcionario->id }}" {{$selected}}>{{ $funcionario->nombrecompleto }}</option>
                     @endforeach
                 </select>
 			</div>

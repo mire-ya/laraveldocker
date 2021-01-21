@@ -24,7 +24,7 @@ class EleccioncomiteController extends Controller
         r.descripcion as rol 
             FROM eleccioncomite ec INNER JOIN eleccion e ON ec.eleccion_id = e.id
             INNER JOIN funcionario f ON ec.funcionario_id = f.id
-            INNER JOIN rol r ON ec.rol_id = r.id "; 
+            INNER JOIN rol r ON ec.rol_id = r.id ";
 
         $eleccioncomites = DB::select($sql);
         return view("eleccioncomite/list", 
@@ -84,7 +84,7 @@ class EleccioncomiteController extends Controller
         
         Eleccioncomite::create($data);
         return redirect('eleccioncomite')->with('success',
-            ' Guardado Correctamente ...');
+            ' guardado satisfactoriamente ...');
 
     }
 
@@ -139,7 +139,7 @@ class EleccioncomiteController extends Controller
         
         Eleccioncomite::find($id)->update($data);
         return redirect('eleccioncomite')->with('success',
-            ' Cambio Realizado ...');
+            ' Cambio realizado ...');
 
     }
 

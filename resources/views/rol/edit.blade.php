@@ -14,7 +14,7 @@
 		<div class="alert alert-danger">
 			<ul>
 				@foreach ($errors->all() as $error)
-				<li>{{ $error }}</li>
+					<li>{{ $error }}</li>
 				@endforeach
 			</ul>
 		</div><br />
@@ -22,7 +22,6 @@
 	<form method="POST" action="{{ route('rol.update', $rol->id) }}" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		@method('PUT')
-
 		<div class="form-group">
 			@csrf
 			<label for="id">ID:</label>
@@ -32,7 +31,6 @@
 			value="{{$rol->id}}"
 			name="id"/>
 		</div>
-
 		<div class="form-group">
 			@csrf
 			<label for="descripcion">descripcion:</label>
@@ -41,7 +39,6 @@
 			class="form-control"
 			name="descripcion"/>
 		</div>
-
 		<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>
 	</div>

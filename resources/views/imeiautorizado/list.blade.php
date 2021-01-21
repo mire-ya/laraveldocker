@@ -11,7 +11,7 @@
         {{ session()->get('success') }}
     </div><br />
     @endif
-    <table class="table table-striped table-hover">
+    <table class="table table-striped">
     <thead>
         <tr>
         	<th>ID</th>
@@ -33,7 +33,7 @@
 				<td>{{$imeiautorizado->imei}}</td>
 
 				<td><a href="{{ route('imeiautorizado.edit', $imeiautorizado->id)}}"
-					class="btn btn-primary">Editar</a></td>
+					class="btn btn-primary">Edit</a></td>
 				<td>
 
 					<form action="{{ route('imeiautorizado.destroy', $imeiautorizado->id)}}"
@@ -41,8 +41,7 @@
 						@csrf
 						@method('DELETE')
 						<button class="btn btn-danger" type="submit"
-						onclick="return confirm('Esta seguro de borrar al Funcionario {{$imeiautorizado->funcionario}} con el imei {{$imeiautorizado->imei}}')" >Eliminar 
-					</button>
+						onclick="return confirm('Esta seguro de borrar al Funcionario {{$imeiautorizado->funcionario}} con el imei {{$imeiautorizado->imei}}')" >Del</button>
 					</form>
 				</td>
 			</tr>

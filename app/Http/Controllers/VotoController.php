@@ -8,7 +8,6 @@ use App\Models\Eleccion;
 use App\Models\Casilla;
 use App\Models\Votocandidato;
 use App\Models\Voto;
-
 class VotoController extends Controller
 {
     /**
@@ -18,7 +17,6 @@ class VotoController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -134,7 +132,7 @@ class VotoController extends Controller
         
         Voto::find($id)->update($data);
         return redirect('voto')->with('success',
-            ' Cambio Realizado ...');*/
+            ' Cambio realizado ...');*/
 
     }
 

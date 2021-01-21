@@ -11,7 +11,7 @@
         {{ session()->get('success') }}
     </div><br />
     @endif
-    <table class="table table-striped table-hover">
+    <table class="table table-striped">
     <thead>
         <tr>
 			<th>ID</th>
@@ -36,18 +36,15 @@
 				<td>{{$eleccion->fechacierre}}</td>
 				<td>{{$eleccion->horacierre}}</td>
 				<td>{{$eleccion->observaciones}}</td>
-
 				<td><a href="{{ route('eleccion.edit', $eleccion->id)}}"
 					class="btn btn-primary">Editar</a></td>
 				<td>
-					
 				<form action="{{ route('eleccion.destroy', $eleccion->id)}}"
 					method="post">
 					@csrf
 					@method('DELETE')
 					<button class="btn btn-danger" type="submit"
-					onclick="return confirm('Esta seguro de borrar {{$eleccion->periodo}}')" >Eliminar
-				</button>
+					onclick="return confirm('Esta seguro de borrar {{$eleccion->periodo}}')" >Eliminar</button>
 				</form>
 				</td>
 			</tr>
