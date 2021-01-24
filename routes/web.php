@@ -27,8 +27,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('votocandidato/chart', [VotocandidatoController::class, 'generatechart']);
 
 Route::get('casilla/pdf', [CasillaController::class, 'generatepdf']);

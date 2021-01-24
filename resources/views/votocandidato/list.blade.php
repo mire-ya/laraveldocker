@@ -11,7 +11,7 @@
 		{{ session()->get('success') }}
 	</div><br />
 	@endif
-	<table class="table table-striped table-hover">
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Voto-ID</th>
