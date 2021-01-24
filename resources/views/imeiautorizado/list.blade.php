@@ -11,7 +11,7 @@
         {{ session()->get('success') }}
     </div><br />
     @endif
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
     <thead>
         <tr>
         	<th>ID</th>
@@ -30,10 +30,10 @@
 				<td>{{$imeiautorizado->funcionario}}</td>
 				<td>{{$imeiautorizado->eleccion}}</td>
 				<td>{{$imeiautorizado->casilla}}</td>
-				<td>{{$imeiautorizado->imeiautorizado}}</td>
+				<td>{{$imeiautorizado->imei}}</td>
 
 				<td><a href="{{ route('imeiautorizado.edit', $imeiautorizado->id)}}"
-					class="btn btn-primary">Edit</a></td>
+					class="btn btn-primary">Editar</a></td>
 				<td>
 
 					<form action="{{ route('imeiautorizado.destroy', $imeiautorizado->id)}}"
@@ -41,7 +41,8 @@
 						@csrf
 						@method('DELETE')
 						<button class="btn btn-danger" type="submit"
-						onclick="return confirm('Esta seguro de borrar al Funcionario {{$imeiautorizado->funcionario}} con el imei {{$imeiautorizado->imei}}')" >Del</button>
+						onclick="return confirm('Esta seguro de borrar al Funcionario {{$imeiautorizado->funcionario}} con el imei {{$imeiautorizado->imei}}')" >Eliminar 
+					</button>
 					</form>
 				</td>
 			</tr>

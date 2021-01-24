@@ -33,13 +33,13 @@
 				</td>
 
 				<td><a href="{{ route('voto.edit', $voto->id)}}"
-					class="btn btn-primary">Edit</a></td>
+					class="btn btn-primary">Editar</a></td>
 				<td>
 					<form action="{{ route('voto.destroy', $voto->id)}}" method="post">
 						@csrf
 						@method('DELETE')
 						<button class="btn btn-danger" type="submit"
-						onclick="return confirm('Esta seguro de borrar')" >Del</button>
+						onclick="return confirm('Esta seguro de borrar')" >Eliminar</button>
 					</form>
 				</td>
 			</tr>

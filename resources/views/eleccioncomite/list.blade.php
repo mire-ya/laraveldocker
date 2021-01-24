@@ -11,7 +11,7 @@
         {{ session()->get('success') }}
     </div><br />
     @endif
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
     <thead>
         <tr>
         	<th>ID</th>
@@ -31,14 +31,14 @@
 				<td>{{$eleccioncomite->rol}}</td>
 
 				<td><a href="{{ route('eleccioncomite.edit', $eleccioncomite->id)}}"
-					class="btn btn-primary">Edit</a></td>
+					class="btn btn-primary">Editar</a></td>
 				<td>
 					<form action="{{ route('eleccioncomite.destroy', $eleccioncomite->id)}}"
 					method="post">
 						@csrf
 						@method('DELETE')
 						<button class="btn btn-danger" type="submit"
-						onclick="return confirm('Esta seguro de borrar a {{$eleccioncomite->funcionario}} con rol de {{$eleccioncomite->rol}}')" >Del</button>
+						onclick="return confirm('Esta seguro de borrar a {{$eleccioncomite->funcionario}} con rol de {{$eleccioncomite->rol}}')" >Eliminar</button>
 					</form>
 				</td>
 			</tr>
