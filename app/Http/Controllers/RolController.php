@@ -113,8 +113,8 @@ class RolController extends Controller
         $pdf = PDF::loadHTML($html);
         return $pdf->download('archivo.pdf');*/
 
-        /*$candidatos = Candidato::all();
-        return PDF::loadView('candidato/list', ['candidatos'=>$candidatos])
+        /*$roles = Rol::all();
+        return PDF::loadView('rol/list', ['roles'=>$roles])
             ->stream('archivo.pdf');*/
 
     }
