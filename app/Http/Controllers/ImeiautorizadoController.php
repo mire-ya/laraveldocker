@@ -20,15 +20,26 @@ class ImeiautorizadoController extends Controller
      */
     public function index()
     {
-         $imeiautorizados = DB::table('imeiautorizado')
+         /*$imeiautorizados = DB::table('imeiautorizado')
             ->join('funcionario', 'imeiautorizado.funcionario_id', '=', 'funcionario.id')
             ->join('eleccion', 'imeiautorizado.eleccion_id', '=', 'eleccion.id')
             ->join('casilla', 'imeiautorizado.casilla_id', '=', 'casilla.id')
             ->select('imeiautorizado.id','casilla.ubicacion as casilla','funcionario.nombrecompleto as funcionario','eleccion.periodo as eleccion', 'imei')
             ->get();
 
-        return view("imeiautorizado/list",
-        compact("imeiautorizados"));
+            return view("imeiautorizado/list",
+            compact("imeiautorizados"));*/
+
+            $sql = "SELECT ia.id, f.nombrecompleto as funcionario, c.ubicacion as casilla, e.periodo as eleccion
+                FROM imeiautorizado ia 
+                INNER JOIN funcionario f ON ia.funcionario_id = f.id
+                INNER JOIN casilla c ON ia.casilla_id = c.id
+                INNER JOIN eleccion e ON ia.eleccion_id = e.id";
+
+                $imeiautorizados = DB::select($sql);
+                return view("imeiautorizado/list", 
+                compact("imeiautorizados"));
+        
     }
 
     /**
@@ -142,4 +153,6 @@ class ImeiautorizadoController extends Controller
         Imeiautorizado::find($id)->delete();
         return redirect('imeiautorizado');
     }
+
+    
 }

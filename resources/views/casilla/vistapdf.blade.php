@@ -38,10 +38,9 @@
 </table>
 <div>
 	<div style='text-align:center;'>	
-   
    		<h3>&copy;Mireya.dev</h3> 
-</div>
-<script type="text/php">
+	</div>
+	<script type="text/php">
 		if (isset($pdf) ) {
 				$pdf->page_script('
 				$font = $fontMetrics->get_font("Arial, Helvetica, sans-serif", "normal");

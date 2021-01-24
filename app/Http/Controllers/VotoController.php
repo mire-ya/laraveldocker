@@ -21,12 +21,12 @@ class VotoController extends Controller
     public function index()
     {
         $sql = "SELECT v.id, e.periodo as eleccion, c.ubicacion as casilla, v.evidencia 
-        FROM voto v 
-        INNER JOIN eleccion e ON v.eleccion_id=e.id 
-        INNER JOIN casilla c ON v.casilla_id=c.id";
+            FROM voto v 
+            INNER JOIN eleccion e ON v.eleccion_id=e.id 
+            INNER JOIN casilla c ON v.casilla_id=c.id";
 
-          $votos = DB::select($sql);
-           return view("voto/list", compact("votos")); 
+        $votos = DB::select($sql);
+        return view("voto/list", compact("votos")); 
     }
 
     /**
@@ -37,7 +37,7 @@ class VotoController extends Controller
     public function create()
     {
 
-         $casillas   = Casilla::all();
+        $casillas   = Casilla::all();
         $candidatos = Candidato::all();
         $elecciones = Eleccion::all();
         return view("voto/create",
@@ -166,13 +166,15 @@ class VotoController extends Controller
         return redirect('voto');
     }
 
-     public function generatepdf()
+    public function generatepdf()
     {
-      $sql = "SELECT v.id, e.periodo as eleccion, c.ubicacion as casilla, v.evidencia from voto v INNER JOIN eleccion e ON v.eleccion_id=e.id INNER JOIN casilla c ON v.casilla_id=c.id";
+        $sql = "SELECT v.id, e.periodo as eleccion, c.ubicacion as casilla, v.evidencia 
+            FROM voto v 
+            INNER JOIN eleccion e ON v.eleccion_id=e.id 
+            INNER JOIN casilla c ON v.casilla_id=c.id";
 
-          $votos = DB::select($sql);
-      // print_r($casillas);
-        $pdf = PDF::loadView('voto/vista', ['votos'=>$votos]);
+        $votos = DB::select($sql);
+        $pdf = PDF::loadView('voto/vistapdf', ['votos'=>$votos]);
         return $pdf->stream('voto.pdf');
     }
 }

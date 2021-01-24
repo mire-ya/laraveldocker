@@ -30,7 +30,7 @@
 				<td>{{$imeiautorizado->funcionario}}</td>
 				<td>{{$imeiautorizado->eleccion}}</td>
 				<td>{{$imeiautorizado->casilla}}</td>
-				<td>{{$imeiautorizado->imei}}</td>
+				<td>{{$imeiautorizado->imeiautorizado}}</td>
 
 				<td><a href="{{ route('imeiautorizado.edit', $imeiautorizado->id)}}"
 					class="btn btn-primary">Edit</a></td>

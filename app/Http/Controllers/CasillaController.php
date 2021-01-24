@@ -94,23 +94,23 @@ class CasillaController extends Controller
     public function generatepdf()
     {
 
-        /*asillas = Casilla::all();
+        /*$casillas = Casilla::all();
         $pdf = PDF::loadView('casilla/list', ['casillas'=>$casillas]);
-        return $pdf->download('archivo.pdf');*/
+        return $pdf->download('archivocasila.pdf');*/
         
         /*$html = "<div style='text-align:center;'><h1>PDF generado desde etiquetas html</h1>
         <br><h3>&copy;Mireya.dev</h3> </div>";
         $pdf = PDF::loadHTML($html);
-        return $pdf->download('archivo.pdf');*/
+        return $pdf->download('archivocasilla.pdf');*/
 
         /*$casillas = Casilla::all();
         return PDF::loadView('casilla/list', ['casillas'=>$casillas])
-            ->stream('archivo.pdf');*/
+            ->stream('archivocasilla.pdf');*/
 
-            //Saltos de paginas
+            //Numero de paginas
         $casillas = Casilla::all();
         return PDF::loadView('casilla/vistapdf', ['casillas'=>$casillas])
-            ->stream('archivo.pdf');
+            ->stream('archivocasilla.pdf');
 
     }
 

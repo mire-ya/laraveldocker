@@ -27,9 +27,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('votocandidato/chart', [VotocandidatoController::class, 'generatechart']);
 
 Route::get('casilla/pdf', [CasillaController::class, 'generatepdf']);
+Route::get('candidato/pdf', [CandidatoController::class, 'generatepdf']);
+Route::get('rol/pdf', [RolController::class, 'generatepdf']);
+Route::get('eleccion/pdf', [EleccionController::class, 'generatepdf']);
+Route::get('funcionario/pdf', [FuncionarioController::class, 'generatepdf']);
+Route::get('eleccioncomite/pdf', [EleccioncomiteController::class, 'generatepdf']);
+Route::get('funcionariocasilla/pdf', [FuncionariocasillaController::class, 'generatepdf']);
+Route::get('imeiautorizado/pdf', [ImeiautorizadoController::class, 'generatepdf']);
+Route::get('voto/pdf', [VotoController::class, 'generatepdf']);
+Route::get('votocandidato/pdf', [VotocandidatoController::class, 'generatepdf']);
 
 Route::resource('casilla', CasillaController::class);
 Route::resource('candidato', CandidatoController::class);

@@ -3,8 +3,7 @@
 <head>
 	<div style='text-align:center;'>	
    
-		<h1>PDF generado desde etiquetas html:</h1>
-		<h2> Voto</h2>
+		<h1>PDF CON NUMERO DE PAGINA:</h1>
 		<br>
 </head>
    
@@ -34,7 +33,7 @@
 <div>
 	<div style='text-align:center;'>	
    
-   		<h3>&copy;Wendy.dev</h3> 
+   		<h3>&copy;Mireya.dev</h3> 
 </div>
 <script type="text/php">
 		if (isset($pdf) ) {

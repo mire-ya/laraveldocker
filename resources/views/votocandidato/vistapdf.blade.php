@@ -3,8 +3,7 @@
 <head>
 	<div style='text-align:center;'>	
    
-		<h1>PDF Con salto de Linea:</h1>
-		<h2> Voto Candidato</h2>
+		<h1>PDF CON NUMERO DE PAGINA:</h1>
 		<br>
 </head>
    
